@@ -41,7 +41,7 @@ function Publier() {
         try {
             const token = localStorage.getItem('token')
             console.log("token recupéré:", token)
-            await axios.post('http://localhost:5000/api/publier', formData,
+            await axios.post(`${import.meta.env.VITE_API_URL}/publier`, formData,
                 {
                     headers: {
                         Authorization:

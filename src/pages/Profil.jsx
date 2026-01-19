@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable no-template-curly-in-string */
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { jwtDecode } from 'jwt-decode'
@@ -10,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const Profil = () => {
   const navigate = useNavigate();
-  const [userId, setuserId] = useState(null);
+
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [photo, setPhoto] = useState('null');
@@ -29,14 +28,16 @@ const Profil = () => {
     const token = localStorage.getItem('token');
     if (token) {
       const decoded = jwtDecode(token);
-      setuserId(decoded.id);
+      const userId = decoded.id;
 
-      axios.get(`http://localhost:5000/api/users/${decoded.id}`)
+
+      axios.get(`${import.meta.env.VITE_API_URL}/users/${userId}`)
+
         .then((res) => {
           setNom(res.data.username)
           setEmail(res.data.email)
           if (res.data.photo_profil) {
-            setPhotoUrl(`http://localhost:5000/UPLOAD/${res.data.photo_profil} `)
+            setPhotoUrl(`${import.meta.env.VITE_API_URL}/UPLOAD/${res.data.photo_profil} `)
           }
         })
         .catch((err) => console.error(err))
@@ -55,7 +56,9 @@ const Profil = () => {
   //enregistrement des modifications
   const handleSave = async (e) => {
     e.preventDefault();
-
+    const token = localStorage.getItem('token');
+    const decoded = jwtDecode(token);
+    const userId = decoded.id;
     const formData = new FormData();
     formData.append('nom', nom);
     formData.append('email', email);
@@ -64,7 +67,7 @@ const Profil = () => {
     }
     try {
 
-      await axios.put(`http://localhost:5000/api/users/${userId}`, formData);
+      await axios.put(`${import.meta.env.VITE_API_URL}/users/${userId}`, formData);
       alert('mise a jour reussie')
     } catch (error) {
       console.error('erreur lors de la mise a jour', error);

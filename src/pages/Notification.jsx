@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './crud.css';
 import axios from 'axios';
 
@@ -14,13 +14,11 @@ const Notification = () => {
     });
 
     const fetchUtilisateurs = async () => {
-        const res = await axios.get('http://localhost:5000/api/crudserv');
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/crudserv`);
         setUtilisateurs(res.data);
     };
 
-    useEffect(() => {
-        fetchUtilisateurs();
-    }, []);
+
 
     const handleChange = e => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,9 +27,9 @@ const Notification = () => {
     const handleSubmit = async e => {
         e.preventDefault();
         if (editIndex !== null) {
-            await axios.put(`http://localhost:5000/api/crudserv/${utilisateurs[editIndex].id}`, formData);
+            await axios.put(`${import.meta.env.VITE_API_URL}/crudserv/${utilisateurs[editIndex].id}`, formData);
         } else {
-            await axios.post('http://localhost:5000/api/crudserv', formData);
+            await axios.post(`${import.meta.env.VITE_API_URL}/crudserv`, formData);
         }
         fetchUtilisateurs();
         setFormData({ username: '', email: '', password: '', genre: '', numero: '' });
@@ -39,7 +37,7 @@ const Notification = () => {
     };
 
     const handleDelete = async id => {
-        await axios.delete(`http://localhost:5000/api/crudserv/${id}`);
+        await axios.delete(`${import.meta.env.VITE_API_URL}/crudserv/${id}`);
         fetchUtilisateurs();
     };
 
