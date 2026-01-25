@@ -76,7 +76,7 @@ const MainRoutes = ({ isAuthenticated, setIsAuthenticated, tokenExpired }) => {
       <nav className="nav">
         <Link to="/" className={location.pathname === "/" ? "active-link" : ""}>Accueil <FaHome /> </Link>
         <Link to="/a-propos" className={location.pathname === "/a-propos" ? "active-link" : ""}>A Propos <FaInfoCircle /></Link>
-        <Link to="/Publier" className={location.pathname === "/Publier" ? "active-link" : ""}><span> inover</span><FaPlusCircle /> </Link>
+        <Link to="/Publier" className={location.pathname === "/Publier" ? "active-link" : ""}><span> inovation</span><FaPlusCircle /> </Link>
         <Link to="/mon-compte" className={location.pathname === "/mon-compte" ? "active-link" : ""}>Mon Compte <FaUser /></Link>
         <Link to="/notification" className={location.pathname === "/notification" ? "active-link" : ""}>Notification <FaUsers /></Link>
       </nav>
