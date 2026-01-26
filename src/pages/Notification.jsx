@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './crud.css';
 import axios from 'axios';
 
@@ -13,10 +13,21 @@ const Notification = () => {
         numero: '',
     });
 
+
     const fetchUtilisateurs = async () => {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/crudserv`);
-        setUtilisateurs(res.data);
+        try {
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/crudserv`);
+            setUtilisateurs(res.data);
+        } catch (error) {
+            console.error('ERREUR GET', error)
+        }
+
     };
+
+    useEffect(() => {
+        fetchUtilisateurs();
+    },
+        []);
 
 
 
