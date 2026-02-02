@@ -84,7 +84,7 @@ const Profil = () => {
           <div className="photo-cercle">
             <img src={photoUrl || '/default-avatar'} className="profile-pic" />
           </div>
-          <label for="photo" className="icon-overlay"> <FaCamera /> </label>
+          <label htmlFor="photo" className="icon-overlay"> <FaCamera /> </label>
 
           <div>
 
