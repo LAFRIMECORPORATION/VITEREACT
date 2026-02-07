@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 const Profil = () => {
   const navigate = useNavigate();
-
+  const API_URL= import.meta.env.VITE_API_URL;
+  const BASE_URL= API_URL.replace('/api', '');
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [photo, setPhoto] = useState('null');
@@ -37,7 +38,9 @@ const Profil = () => {
           setNom(res.data.username)
           setEmail(res.data.email)
           if (res.data.photo_profil) {
-            setPhotoUrl(`${import.meta.env.VITE_API_URL}/UPLOAD/${res.data.photo_profil} `)
+            setPhotoUrl(`${BASE_URL}/uploads/${res.data.photo_profil} `)
+          } else {
+            setPhotoUrl(null);
           }
         })
         .catch((err) => console.error(err))
