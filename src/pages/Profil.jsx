@@ -46,6 +46,7 @@ const Profil = () => {
         .catch((err) => console.error(err))
 
     }
+    console.log('PHOTO URL=', photoUrl)
 
 
 
