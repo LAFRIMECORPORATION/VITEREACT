@@ -14,7 +14,7 @@ import './App.css';
 
 function App() {
 
-  console.log("ENV = ", import.meta.env);
+  console.log("ENV = ", import.meta.env.VITE_BACKEND_URL);
   console.log("API = ", import.meta.env.VITE_API_URL)
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
