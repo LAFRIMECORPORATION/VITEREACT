@@ -14,8 +14,6 @@ const Profil = () => {
   const [photo, setPhoto] = useState('null');
   const [photoUrl, setPhotoUrl] = useState('');
   const handleLogout = () => {
-    const API_URL = import.meta.env.VITE_API_URL
-    const BACKEND = import.meta.env.VITE_BACKEND_URL
 
     //supprrimer le token
     localStorage.removeItem('token')
@@ -26,20 +24,19 @@ const Profil = () => {
 
   //recuperer les données existant de l utilisateur
   useEffect(() => {
-    const fetchUser= async () => {
     const token = localStorage.getItem('token');
     if (token) {
       const decoded = jwtDecode(token);
       const userId = decoded.id;
 
 
-      axios.get(`${API_URL}/users/${userId}`)
+      axios.get(`${import.meta.env.VITE_API_URL}/users/${userId}`)
 
         .then((res) => {
           setNom(res.data.username)
           setEmail(res.data.email)
           if (res.data.photo_profil) {
-            setPhotoUrl(`${BACKEND}/uploads/${res.data.photo_profil} `)
+            setPhotoUrl(`${import.meta.env.VITE_BACKEND_URL}/uploads/${res.data.photo_profil} `)
           } else {
             setPhotoUrl(null);
           }
@@ -47,12 +44,11 @@ const Profil = () => {
         .catch((err) => console.error(err))
 
     }
-    
-}
-fetchUser()
+    console.log('PHOTO URL=', photoUrl)
 
 
-  }, [API_URL, BACKEND]);
+
+  }, []);
   //en cas de chargement des modifications
   const handlePhotoChange = (e) => {
     const file = e.target.files[0];
@@ -73,7 +69,7 @@ fetchUser()
     }
     try {
 
-      await axios.put(`${API_URL}/users/${userId}`, formData);
+      await axios.put(`${import.meta.env.VITE_API_URL}/users/${userId}`, formData);
       alert('mise a jour reussie')
     } catch (error) {
       console.error('erreur lors de la mise a jour', error);
