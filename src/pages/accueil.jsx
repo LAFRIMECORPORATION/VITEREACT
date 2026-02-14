@@ -69,7 +69,8 @@ const Accueil = () => {
                         <h3>{projets.titre}</h3>
                         <p className='category'>{projets.categorie} </p>
                         <p className='description'>{projets.description} </p>
-                        {projets.fichier && <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${projets.fichier}`} alt="projet" className='projet-image' />}
+                        {projets.fichier && <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${projets.fichier}`}
+                            alt="projet" className='projet-image' />}
                     </div>
                     {/*like et commentaire*/}
                     <LikeCommentaire projetId={projets.id} />
