@@ -59,7 +59,7 @@ const Accueil = () => {
             {projets.map((projets, index) => (
                 <div key={index} className="card">
                     <div className='card-header'>
-                        <img src={`${import.meta.env.VITE_API_URL}/UPLOAD/${projets.photo_profil}`} alt="profil" className="profil-pic" />
+                        <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${projets.photo_profil}`} alt="profil" className="profil-pic" />
                         <div>
                             <h4>{projets.username} </h4>
                             <small> {new Date(projets.date_publication).toLocaleDateString()} </small>
@@ -69,7 +69,7 @@ const Accueil = () => {
                         <h3>{projets.titre}</h3>
                         <p className='category'>{projets.categorie} </p>
                         <p className='description'>{projets.description} </p>
-                        {projets.fichier && <img src={`${import.meta.env.VITE_API_URL}/uploads/${projets.fichier}`} alt="projet" className='projet-image' />}
+                        {projets.fichier && <img src={`${import.meta.env.VITE_BACKEND_URL}/uploads/${projets.fichier}`} alt="projet" className='projet-image' />}
                     </div>
                     {/*like et commentaire*/}
                     <LikeCommentaire projetId={projets.id} />
