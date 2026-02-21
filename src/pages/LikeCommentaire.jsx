@@ -5,7 +5,7 @@ import { FaThumbsUp, FaRegThumbsUp, FaCommentAlt } from 'react-icons/fa';
 import './LikeCommentaire.css'
 
 
-export default function LikeCommentSection({ projetId, token }) {
+export default function LikeCommentSection({ projetId }) {
     const [likesCount, setLikesCount] = useState(0);
     const [hasLiked, setHasLiked] = useState(false)
     const [comments, setComments] = useState([])
@@ -67,6 +67,7 @@ export default function LikeCommentSection({ projetId, token }) {
 
     };
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         fetchInteraction()
     }, [fetchInteraction]);
 
