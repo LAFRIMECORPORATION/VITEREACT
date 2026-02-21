@@ -16,7 +16,7 @@ export default function LikeCommentSection({ projetId, token }) {
     const fetchInteraction = useCallback(async () => {
         try {
             const token = localStorage.getItem('token')
-            const res = await axios.get(`http://localhost:5000/api/projets/${projetId}`,
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/projets/${projetId}`,
                 {},
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -35,7 +35,7 @@ export default function LikeCommentSection({ projetId, token }) {
         try {
             const token = localStorage.getItem('token');
             const res = await axios.post(
-                `http://localhost:5000/api/projets/${projetId}/like`,
+                `${import.meta.env.VITE_API_URL}/projets/${projetId}/like`,
                 {},
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -54,7 +54,7 @@ export default function LikeCommentSection({ projetId, token }) {
         const token = localStorage.getItem('token')
         if (newComment.trim() === '') return;
         try {
-            await axios.post(`http://localhost:5000/api/projets/${projetId}/comment`,
+            await axios.post(`${import.meta.env.VITE_API_URL}/projets/${projetId}/comment`,
                 { content: newComment },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
