@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './Publier.css';
+import { useNavigate } from "react-router-dom";
 
 function Publier() {
     const [titre, setTitre] = useState('');
     const [description, setDescription] = useState('');
+    const Navigate = useNavigate()
     const [categorie, setCategorie] = useState('');
     const [fichier, setFichier] = useState(null);
     const categorieList = [
@@ -51,6 +53,7 @@ function Publier() {
                     },
                 });
             alert("projet publié avec succes");
+            Navigate('/accueil');
             setTitre('');
             setDescription('');
             setCategorie('');
