@@ -41,7 +41,7 @@ const PORTFOLIO_DATA = {
       tech: ["React", "Prisma", "PostgreSQL", "Tailwind"],
       liveUrl: "https://votre-projet-demo.vercel.app", // 💡 Lien de démo Vercel
       githubUrl: "https://github.com", // 💡 Lien du code source
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" // Image d'illustration
+      image: "/lafrimexorporation.jpeg" // Image d'illustration
     },
     {
       id: 2,
