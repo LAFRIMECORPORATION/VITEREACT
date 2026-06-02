@@ -39,7 +39,7 @@ const PORTFOLIO_DATA = {
       title: "Plateforme de Financement Participatif",
       description: "Une application multi-rôles connectant des étudiants entrepreneurs et des investisseurs, incluant un système de validation KYC et des flux transactionnels sécurisés.",
       tech: ["React", "Prisma", "PostgreSQL", "Tailwind"],
-      liveUrl: "https://votre-projet-demo.vercel.app", // 💡 Lien de démo Vercel
+      liveUrl: "https://launch-pad-eosin.vercel.app/", // 💡 Lien de démo Vercel
       githubUrl: "https://github.com", // 💡 Lien du code source
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" // Image d'illustration
     },
