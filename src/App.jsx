@@ -12,7 +12,7 @@ const PORTFOLIO_DATA = {
     title: "Développeur Full-Stack React & Node.js",
     bio: "Passionné par la création d'applications web modernes, robustes et centrées sur l'expérience utilisateur. Spécialisé dans l'écosystème React et la gestion de bases de données relationnelles.",
     avatarUrl: "/lafrimecorporation.jpeg", // 💡 REMPLACEZ PAR L'URL DE VOTRE PHOTO (ex: lien GitHub ou Cloudinary)
-    cvUrl: "/MON CV.pdf", // 📂 Fichier placé dans votre dossier : public/CV_Nom_Prenom.pdf (Méthode 1)
+    cvUrl: "/moncv.pdf", // 📂 Fichier placé dans votre dossier : public/CV_Nom_Prenom.pdf (Méthode 1)
     email: "merimesiewe84@gmail.com",
     
     // --- VOS RÉSEAUX SOCIAUX ---
