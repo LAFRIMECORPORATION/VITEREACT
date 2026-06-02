@@ -11,7 +11,7 @@ const PORTFOLIO_DATA = {
     name: "KAKTCHEU SIEWE NICO MERIME", 
     title: "Développeur Full-Stack React & Node.js",
     bio: "Passionné par la création d'applications web modernes, robustes et centrées sur l'expérience utilisateur. Spécialisé dans l'écosystème React et la gestion de bases de données relationnelles.",
-    avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80", // 💡 REMPLACEZ PAR L'URL DE VOTRE PHOTO (ex: lien GitHub ou Cloudinary)
+    avatarUrl: "/lafrimecorporation.jpeg", // 💡 REMPLACEZ PAR L'URL DE VOTRE PHOTO (ex: lien GitHub ou Cloudinary)
     cvUrl: "/MON CV.pdf", // 📂 Fichier placé dans votre dossier : public/CV_Nom_Prenom.pdf (Méthode 1)
     email: "merimesiewe84@gmail.com",
     
@@ -41,7 +41,7 @@ const PORTFOLIO_DATA = {
       tech: ["React", "Prisma", "PostgreSQL", "Tailwind"],
       liveUrl: "https://votre-projet-demo.vercel.app", // 💡 Lien de démo Vercel
       githubUrl: "https://github.com", // 💡 Lien du code source
-      image: "/lafrimexorporation.jpeg" // Image d'illustration
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" // Image d'illustration
     },
     {
       id: 2,
